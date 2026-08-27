@@ -2,6 +2,7 @@
 train.py — MLP on MNIST with MLflow experiment tracking
 AIOps Module 1 Assignment, Question 2
 """
+import os
 import argparse
 import subprocess
 import numpy as np
@@ -45,7 +46,7 @@ def main():
     parser.add_argument("--run_name", type=str, default=None)
     args = parser.parse_args()
 
-    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5000"))
     mlflow.set_experiment("mnist-mlp-classifier")
 
     X_train, X_test, y_train, y_test = load_mnist(seed=args.seed)
