@@ -10,6 +10,7 @@ This repo contains my submission for the Module 1 assignment (Git + Conda, MLflo
 - `environment.yml` — pinned conda/mamba environment (Python 3.10, pytorch, mlflow, dvc, scikit-learn, pandas).
 - `data.dvc`, `filenames.csv.dvc` — DVC pointer files tracking the versioned dataset (currently pointing at v2, 2800 files).
 - `screenshots/` — evidence referenced from `report.pdf`.
+- `partner_b/` — my partner Arnav's (DA24B027) own write-up and screenshots documenting his independent reproduction of this project (Q4, Parts 2-4). See `partner_b/README.md`.
 - `report.pdf` — the actual 1-page report with findings for all 4 questions.
 
 ## Setup
@@ -83,6 +84,10 @@ The DVC remote is configured for SSH — to pull data from a different machine, 
 ```bash
 dvc remote modify sshremote url ssh://<user>@<host>/path/to/dvcstore
 ```
+
+### Partner B's independent reproduction
+
+My partner Arnav (DA24B027) reproduced this project from scratch on his own machine, over a shared mobile hotspot. His full write-up, exact commands, and screenshots (cloning, environment setup, and the matching training run) are documented in [`partner_b/README.md`](partner_b/README.md). All 20 logged epochs matched my original run exactly.
 
 ## Note on the DVC remote
 
