@@ -47,7 +47,7 @@ def main():
     args = parser.parse_args()
 
     mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", "http://localhost:5000"))
-    mlflow.set_experiment("mnist-mlp-classifier")
+    mlflow.set_experiment(os.environ.get("MLFLOW_EXPERIMENT_NAME", "mnist-mlp-classifier"))
 
     X_train, X_test, y_train, y_test = load_mnist(seed=args.seed)
     classes = np.unique(y_train)
